@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+<html>
+    <head lang="pt">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'website/static/website/css/base.css' %}">
+    </head>
+    <!-- base.html -->
+    <body>
+        <header class="jumbotron text-center">
+            <h1>Website</h1>
+            <p>Lusofona</p>
+            <nav>
+                <a href="{% url "website:Home" %}" class="btn btn-info">Home</a>
+                <a href="{% url "website:Exemplos" %}" class="btn btn-info">Exemplos</a>
+                <a href="{% url 'website:Sobre' %}" class="btn btn-info">Sobre</a>
+            </nav>
+        </header>
+        <article class="container">
+            <main class="col-sm-6">
+                {% block main %}
+                {% endblock main %}
+            </main>
+            <aside class="col-sm-6">
+                {% load static %}
+                <img src="{% static 'website/static/images/vroom.jpeg' %}">
+            </aside>
+        </article>
+        <footer>
+            <p>ULHT Segundo Ano</p>
+        </footer>
+    </body>
+</html>
